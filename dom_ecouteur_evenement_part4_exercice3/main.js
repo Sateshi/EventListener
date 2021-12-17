@@ -9,17 +9,16 @@ h3.addEventListener('dblclick',function() {
 let p = document.querySelector('p');
 p.classList.toggle('text-style');
 
-let span = document.querySelectorAll("p span");
+let span = document.querySelectorAll('span');
+let span1 = p.nextElementSibling.children
+span1 = Array.from(span1);
 
-span[0].addEventListener("click",function(){
-    span[0].style.fontWeight = "bolder";
+span.forEach(element => {
+    element.addEventListener('click', function() {
+        element.classList.add("bolder")
+    })
 })
-span[1].addEventListener("click",function(){
-    span[1].style.fontWeight = "bolder";
-})
-span[2].addEventListener("click",function(){
-    span[2].style.fontWeight = "bolder";
-})
+
 
 span[3].addEventListener("click",function(){
     span[3].classList.toggle("bolder-red");
