@@ -1,5 +1,7 @@
 function replaceP(pBalise,content){
-    pBalise.innerHTML = content;
+    return function(){
+        pBalise.innerHTML = content;
+    }
 }
 
 function colorMe(color,bgcolor){
@@ -14,9 +16,7 @@ let input = document.querySelector('input');
 let p = document.querySelector('p');
 let h1 = document.querySelector('h1');
 
-input.addEventListener('click', function (){
-    replaceP(p,pContent);
-})
+input.addEventListener('click', replaceP(p,pContent))
 
 h1.addEventListener('click', function (){
     colorMe(theColor,theBackground);
